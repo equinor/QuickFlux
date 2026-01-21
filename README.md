@@ -25,3 +25,23 @@ To get started we install the python backend.
    ```
 
 The backend should now be up and running. Next we set up the frontend component.
+
+1. Open a new terminal and navigate to the frontend folder:
+
+   ```bash
+   cd frontend
+   ```
+
+2. Install the necessary packages. If you don't have [Node.js](https://nodejs.org/en) installed locally on your computer, please install it first before running the command:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the frontend:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Navigate to the localhost address presented in the terminal.
