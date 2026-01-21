@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=75.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+version = "1.0.0"
+name = "quick_flux"
+authors = [
+    {name = "Morten Fredriksen", email = "morfre@equinor.com"},
+    {name = "Erlend Westad", email = "ewest@equinor.com"},
+    {name = "Jaime Maldonado Moniet", email = "jmald@equinor.com"},
+    {name = "Aasmund Kvålsgard", email = "aakva@equinor.com"},
+    {name = "Sander Skogen", email = "slsk@equinor.com"},
+]
+readme = "README.md"
+dependencies = [
+    "pytest",
+    "pytest-mock",
+    "pydantic>=2.0",
+    "matplotlib",
+    "numpy",
+]
+
+[project.optional-dependencies]
+api = [
+    "gunicorn",
+    "python-jose",
+    "azure-identity",   
+    "azure-messaging-webpubsubservice",
+    "flask",
+    "flask_cors",
+    "opencensus-ext-azure",
+    "opencensus-ext-flask",
+    "python-dotenv",
+]
+
+testing = [
+    "pytest",
+    "pytest-xdist",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths="./tests/"
+
+addopts = [
+
+"--import-mode=importlib",
+
+]
+
+[tool.black]
+line-length = 120
