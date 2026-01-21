@@ -19,22 +19,13 @@ dependencies = [
     "pydantic>=2.0",
     "matplotlib",
     "numpy",
-]
-
-[project.optional-dependencies]
-api = [
-    "gunicorn",
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.23.0",
     "python-jose",
     "azure-identity",   
     "azure-messaging-webpubsubservice",
-    "flask",
-    "flask_cors",
     "opencensus-ext-azure",
-    "opencensus-ext-flask",
     "python-dotenv",
-]
-
-testing = [
     "pytest",
     "pytest-xdist",
 ]

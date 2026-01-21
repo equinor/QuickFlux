@@ -13,6 +13,7 @@ class MagneticFieldInput(BaseModel):
     xVal: float
     yMax: float
     yMin: float
+    icnirpLimit: float
     curve_above: float
     cable_diameter: float
     trefoil: bool = False

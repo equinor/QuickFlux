@@ -58,8 +58,7 @@ const MagneticFieldInput: React.FC<MagneticFieldInputProps> = ({ setResponseData
         try {
             setIsLoading(true);
             
-            // Replace with your actual API endpoint
-            const apiResponse = await fetch('/api/magnetic-field/calculate', {
+            const apiResponse = await fetch('http://localhost:5000/api/magnetic-field/calculate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -184,7 +183,7 @@ const MagneticFieldInput: React.FC<MagneticFieldInputProps> = ({ setResponseData
                         label={activePowerLabel}
                         placeholder="Watt [W] pr. circuit"
                         type="number"
-                        step="0.01"
+                        step="1"
                         onChange={(e: any) => {
                             setInputData({ ...inputData, active_power: parseFloat(e.target.value) });
                         }}
@@ -196,7 +195,7 @@ const MagneticFieldInput: React.FC<MagneticFieldInputProps> = ({ setResponseData
                         label={reactivePowerLabel}
                         placeholder="Reactive Power [MVAr]"
                         type="number"
-                        step="0.01"
+                        step="1"
                         onChange={(e: any) => {
                             setInputData({ ...inputData, reactive_power: parseFloat(e.target.value) });
                         }}
@@ -218,7 +217,7 @@ const MagneticFieldInput: React.FC<MagneticFieldInputProps> = ({ setResponseData
                         label="Current [A]"
                         placeholder="Current [A]"
                         type="number"
-                        step="0.1"
+                        step="1"
                         onChange={(e: any) => {
                             handleCurrentChange(parseFloat(e.target.value));
                         }}
