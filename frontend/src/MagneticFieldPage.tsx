@@ -45,7 +45,7 @@ export function MagneticFieldPage() {
                         )}
                     </Tabs.Panel>
                     <Tabs.Panel>
-                        <FieldPlot imageImageUrl={responseData?.image ?? null} />
+                        <FieldPlot imageImageUrl={responseData.image} />
                     </Tabs.Panel>
                 </Tabs.Panels>
             </Tabs>

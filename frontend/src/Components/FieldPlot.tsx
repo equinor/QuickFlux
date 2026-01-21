@@ -5,11 +5,13 @@ interface FieldPlotProps {
 }
 
 const FieldPlot: React.FC<FieldPlotProps> = ({ imageImageUrl }) => {
+    const imageUrl = imageImageUrl ? `data:image/png;base64,${imageImageUrl}` : null;
+    
     return (
         <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
-            {imageImageUrl && (
+            {imageUrl && (
                 <img
-                    src={imageImageUrl}
+                    src={imageUrl}
                     alt="Magnetic Field Plot"
                     style={{ width: "100%", height: "700px", objectFit: "scale-down" }}
                 />
